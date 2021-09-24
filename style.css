@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+    min-height: 100vh;
+    position: relative;
+    background-color: hsl(210, 46%, 95%);
+}
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 1.4rem;
+    column-gap: 1.5rem;
+    height: 90vh;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.person1 {
+    grid-column: span 2;
+    order: 1;
+    color: hsl(210, 46%, 95%);
+    background-color: hsl(263, 55%, 52%);
+    position: relative;
+    z-index: -5;
+}
+.person1::before {
+    content: url(images/bg-pattern-quotation.svg);
+    position: absolute;
+    top: 0;
+    right: 15%;
+    z-index: -1;
+}
+.person2 {
+    grid-column: span 1;
+    order: 2;
+    color: hsl(210, 46%, 95%);
+    background-color: hsl(217, 19%, 35%);
+}
+.person3 {
+    grid-column: span 1;
+    order: 4;
+    background-color: #fff;
+    color: hsl(219, 29%, 14%);
+}
+.person4 {
+    grid-column: span 2;
+    order: 5;
+    color: hsl(210, 46%, 95%);
+    background-color: hsl(219, 29%, 14%);
+}
+.person5 {
+    grid-column: span 1;
+    grid-row: span 2;
+    order: 3;
+    background-color: #fff;
+}
+.person1, .person2, .person3, .person4, .person5 {
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 0 1.5rem -15px hsl(217, 19%, 35%);
+}
+
+/* person informations start */
+.userinfo {
+    display: flex;
+}
+.userinfo img {
+    width: 2rem;
+    border-radius: 50%;
+}
+.userinfo .text {
+    margin-left: 1rem;
+}
+.userinfo .text h4 {
+    font-size: 15px;
+    font-weight: lighter;
+}
+.userinfo .text p {
+    color: rgb(179, 179, 179);
+}
+/* person informations end */
+
+.parent .content {
+    margin-top: 1rem;
+}
+.parent .content p:first-child {
+    font-size: 20px;
+    font-weight: 600;
+}
+.parent .content p:last-child {
+    color: rgb(179, 179, 179);
+    margin-top: 1.2rem;
+}
+/* media start  */
+@media (max-width: 1200px) {
+    .parent {
+        width: 90%;
+    }
+}
+@media (max-width: 1100px) {
+    .parent {
+        width: 95%;
+    }
+}
+@media (max-width: 1000px) {
+    .person2 {
+        grid-column: span 2;
+    }
+    .person3 {
+        grid-column: span 2;
+    }
+    .person5 {
+        order: 5;
+        grid-column: span 4;
+    }
+}
+@media (max-width: 600px) {
+    .person1, .person2, .person3, .person4, .person5 {
+        grid-column: span 4;
+    }
+}
+/* media end  */
+/* for white background */
+.person5 .text h4,
+.person3 .text h4 {
+    color: hsl(219, 29%, 14%);
+}
+/* challenge */
+.attribution {
+    font-size: 11px; 
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
